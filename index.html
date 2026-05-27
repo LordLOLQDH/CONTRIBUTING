@@ -5,39 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contributing Guide</title>
   <style>
+    :root {
+      --bg: #0b1220;
+      --card: #111a2e;
+      --accent: #4dd4ff;
+      --text: #e6edf3;
+      --muted: #9fb0c3;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
       margin: 0;
-      padding: 0;
+      font-family: system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     header {
-      background: #1e293b;
-      padding: 30px;
+      padding: 60px 20px;
       text-align: center;
+      background: linear-gradient(135deg, #0f1b33, #0b1220);
+      border-bottom: 1px solid #1d2a44;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+      color: var(--accent);
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 10px auto 0;
+      font-size: 18px;
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
-    h1, h2 {
-      color: #38bdf8;
-    }
-
-    .box {
-      background: #1e293b;
-      padding: 15px;
-      border-radius: 10px;
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 14px;
       margin-bottom: 20px;
+      border: 1px solid #1d2a44;
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      background: #0a1020;
+      padding: 3px 6px;
+      border-radius: 5px;
+      color: #7dd3fc;
     }
 
     a {
-      color: #38bdf8;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .highlight {
+      color: #7dd3fc;
     }
   </style>
 </head>
@@ -46,38 +97,106 @@
 
 <header>
   <h1>🤝 Contributing Guide</h1>
-  <p>Danke, dass du beitragen willst!</p>
+  <p>
+    Willkommen im Projekt! Diese Seite erklärt dir detailliert, wie du beitragen kannst,
+    welche Regeln gelten und wie dein Beitrag erfolgreich angenommen wird.
+  </p>
 </header>
 
 <main>
 
-  <div class="box">
-    <h2>🚀 Wie du beitragen kannst</h2>
+  <div class="card">
+    <h2>📌 Überblick</h2>
     <p>
-      1. Fork das Repository<br>
-      2. Erstelle einen neuen Branch<br>
-      3. Mache deine Änderungen<br>
-      4. Öffne einen Pull Request
+      Dieses Projekt ist Open Source und lebt von der Community.
+      Jeder Beitrag — egal ob klein oder groß — hilft dabei, das Projekt zu verbessern.
+      Ziel ist es, eine stabile, saubere und erweiterbare Codebasis zu erhalten.
     </p>
   </div>
 
-  <div class="box">
-    <h2>📌 Regeln</h2>
+  <div class="card">
+    <h2>🚀 So kannst du beitragen</h2>
+    <p>Bitte halte dich an den folgenden Ablauf:</p>
     <ul>
-      <li>Kein schädlicher Code</li>
-      <li>Sauberer und verständlicher Code</li>
-      <li>Respektvoll bleiben</li>
+      <li>Forke das Repository auf GitHub</li>
+      <li>Erstelle einen neuen Branch mit einem sinnvollen Namen</li>
+      <li>Implementiere deine Änderungen sauber und dokumentiert</li>
+      <li>Teste deinen Code vor dem Commit</li>
+      <li>Erstelle einen Pull Request mit klarer Beschreibung</li>
+    </ul>
+    <p>
+      Beispiel Branch:
+      <code>feature/user-login</code>
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>📏 Regeln & Standards</h2>
+    <p>
+      Um die Qualität des Projekts zu sichern, gelten folgende Regeln:
+    </p>
+    <ul>
+      <li>Kein unsauberer oder unnötig komplexer Code</li>
+      <li>Klare Struktur und verständliche Variablennamen</li>
+      <li>Keine Breaking Changes ohne Absprache</li>
+      <li>Respektvoller Umgang im Code und in Diskussionen</li>
+      <li>Keine schädlichen oder unsicheren Änderungen</li>
     </ul>
   </div>
 
-  <div class="box">
-    <h2>💬 Kontakt</h2>
+  <div class="card">
+    <h2>🧪 Code Qualität</h2>
     <p>
-      Bei Fragen: <a href="mailto:auron-team@proton.me">auron-team@proton.me</a>
+      Bitte achte darauf, dass dein Code:
+    </p>
+    <ul>
+      <li>lesbar und gut strukturiert ist</li>
+      <li>keine unnötigen Wiederholungen enthält</li>
+      <li>kommentiert ist, wenn Logik komplex ist</li>
+      <li>keine Debug- oder Testreste enthält</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🔍 Pull Request Guidelines</h2>
+    <p>
+      Ein guter Pull Request enthält:
+    </p>
+    <ul>
+      <li>Eine klare Beschreibung der Änderungen</li>
+      <li>Referenz auf ein Issue (falls vorhanden)</li>
+      <li>Screenshots oder Beispiele (wenn relevant)</li>
+      <li>Keine unnötigen Dateien oder Logs</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💬 Kommunikation</h2>
+    <p>
+      Bei Fragen oder Problemen kannst du dich jederzeit melden:
+    </p>
+    <p>
+      📧 <a href="mailto:auron-team@proton.me">auron-team@proton.me</a>
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🌟 Warum beitragen?</h2>
+    <p>
+      Beiträge helfen nicht nur dem Projekt, sondern auch dir selbst:
+      Du verbesserst deine Fähigkeiten, lernst echte Entwicklungsprozesse kennen
+      und arbeitest möglicherweise an etwas, das von vielen genutzt wird.
+    </p>
+    <p class="highlight">
+      Jeder Beitrag zählt — egal ob Bugfix, Verbesserung oder Idee.
     </p>
   </div>
 
 </main>
+
+<footer>
+  © Open Source Project • Built with ❤️
+</footer>
 
 </body>
 </html>
